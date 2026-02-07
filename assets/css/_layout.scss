@@ -1,0 +1,32 @@
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.headerContainer {
+    width: 95%;
+    height: auto;
+    box-shadow: 1px 0px 5px grey;
+    border-radius: 5px;
+    padding: 0 0 0 1em;
+
+    h2 {
+        margin: 1px;
+        color: #6586FE;
+    }
+}
+
+.footerContainer {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+
+    p {
+        color: white;
+        margin-left: 1em;
+    }
+}
