@@ -3,4 +3,4 @@
 
 
 $template = 'templates/index.phtml';
-include "layout.phtml";
+include __DIR__ . '/layout.phtml';
