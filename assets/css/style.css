@@ -4,11 +4,28 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+}
+
+body {
+  height: 100;
+}
+
 .layoutContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1em;
+  padding-top: 1em;
 }
 
 .headerContainer {
@@ -24,6 +41,8 @@
 }
 
 .footerContainer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   height: 50px;
   background-color: black;
@@ -33,6 +52,34 @@
 .footerContainer p {
   color: white;
   margin-left: 1em;
+}
+
+.indexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+.indexContainer article:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.indexContainer article:first-of-type p {
+  font-family: "Roboto", sans-serif;
+}
+.indexContainer article:first-of-type div button {
+  color: white;
+  font-size: 10px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 3px;
+}
+.indexContainer article:first-of-type div button:first-child {
+  background-color: #8DA7FC;
+}
+.indexContainer article:first-of-type div button:nth-child(2) {
+  background-color: #6586FE;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,4 +4,18 @@
     box-sizing: border-box;
 }
 
+@import 'variables';
+
+h1 {
+    font-size: $h1Size;
+}
+h2 {
+    font-size: $h2Size;
+}
+p {
+    font-size: $pSize;
+}
+
+
 @import 'layout';
+@import 'index';
