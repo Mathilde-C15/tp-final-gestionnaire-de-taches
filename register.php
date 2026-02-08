@@ -39,7 +39,7 @@ if(!empty($_POST)){
         $insert = insertUser($_POST, $mot_de_passe_hache);
         //var_dump($insert); exit;
         
-        header('Location: account.php');
+        header('Location: userTasks.php');
         exit;
     }
     

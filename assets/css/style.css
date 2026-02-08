@@ -193,6 +193,28 @@ p {
 .accountContainer .taskContainer .buttons button:nth-of-type(3) {
   background-color: #f44336;
 }
+.accountContainer .newTaskContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 5em;
+}
+.accountContainer .newTaskContainer form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-bottom: 2em;
+}
+.accountContainer .newTaskContainer form div {
+  display: flex;
+  flex-direction: column;
+}
+.accountContainer .newTaskContainer form .checkboxes {
+  display: flex;
+}
+.accountContainer .newTaskContainer form .checkboxes div {
+  display: flex;
+}
 
 body {
   height: 100;

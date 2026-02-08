@@ -64,4 +64,30 @@
             }
         }
     }
+    .newTaskContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        padding-bottom: 5em;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            padding-bottom: 2em;
+
+            div {
+                display: flex;
+                flex-direction: column;
+            }
+            .checkboxes {
+                display: flex;
+
+                div {
+                    display: flex;
+                    
+                }
+            }
+        }
+    }
 }

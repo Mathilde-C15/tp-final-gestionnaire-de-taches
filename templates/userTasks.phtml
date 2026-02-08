@@ -24,7 +24,29 @@
             </div>
         </div>
     </article>
+    <article class="newTaskContainer">
+        <h3 class="title">New task</h3>
+        <form method="post">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div>
+                <label for="content">Content</label>
+                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            </div>
+            <div class="checkboxes">
+                <div>
+                    <label for="urgent">Urgent</label>
+                    <input type="checkbox" name="urgent" id="urgent">
+                </div>
+                <div>
+                    <label for="important">Important</label>
+                    <input type="checkbox" name="important" id="important">
+                </div>
+            </div>
 
-
-
+            <button type="submit">Add task</button>
+        </form>
+    </article>
 </section>
