@@ -1,0 +1,81 @@
+.rankingContainer {
+    max-width: 600px;
+    margin: 2rem auto;
+    font-family: sans-serif;
+    padding: 0 1rem;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        color: $text-dark;
+    }
+
+    .rankingList {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem; 
+    }
+
+    .rank-card {
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1px solid #ddd; 
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #555;
+
+       
+
+        .rank-icon {
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .user-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        
+        &.gold {
+            border: 2px solid $gold;
+            color: darken($gold, 10%);
+            background-color: lighten($gold, 48%); 
+
+            .rank-icon {
+                color: $gold;
+                font-size: 1.6rem; 
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+
+        
+        &.silver {
+            border: 2px solid $silver;
+            color: darken($silver, 20%);
+            
+            .rank-icon {
+                color: $silver;
+            }
+        }
+
+        
+        &.bronze {
+            border: 2px solid $bronze;
+            color: darken($bronze, 10%);
+            
+            .rank-icon {
+                color: $bronze;
+            }
+        }
+    }
+}

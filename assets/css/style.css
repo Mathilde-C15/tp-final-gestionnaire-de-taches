@@ -232,18 +232,15 @@ p {
   margin: 0 auto;
   text-align: left;
 }
-
 .editTaskContainer form > div {
   margin-bottom: 16px;
 }
-
 .editTaskContainer label {
   display: block;
   margin-bottom: 6px;
   font-size: 10px;
   font-family: "Nunito", sans-serif;
 }
-
 .editTaskContainer input[type=text] {
   width: 100%;
   border: 1px solid #cfcfcf;
@@ -251,7 +248,6 @@ p {
   padding: 10px;
   font-family: "JetBrains Mono", monospace;
 }
-
 .editTaskContainer input[name=taskContent] {
   height: 180px;
 }
@@ -260,15 +256,23 @@ p {
   width: 220px;
   margin-top: 10px;
 }
-
-.switch-item {
+.switchBlock .switch-item {
   margin-bottom: 15px;
 }
-
-.switch-item p {
-  margin: 0 0 6px 0;
+.switchBlock .switch-item p {
+  margin: 0 0 6px;
   font-size: 10px;
   font-family: "Nunito", sans-serif;
+}
+.switchBlock button[type=submit] {
+  margin-top: 10px;
+  width: 70px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #6586FE;
+  color: #fff;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .switch {
@@ -277,49 +281,30 @@ p {
   height: 30px;
   display: inline-block;
 }
-
 .switch input {
   display: none;
 }
-
-.slider {
+.switch .slider {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: #ccc;
   border-radius: 30px;
 }
-
-.slider:before {
+.switch .slider::before {
   content: "";
   position: absolute;
   width: 22px;
   height: 22px;
-  background: white;
+  background: #fff;
   border-radius: 50%;
   top: 4px;
   left: 4px;
 }
-
 .switch input:checked + .slider {
   background: #6586FE;
 }
-
-.switch input:checked + .slider:before {
+.switch input:checked + .slider::before {
   transform: translateX(30px);
-}
-
-.switchBlock button[type=submit] {
-  margin-top: 10px;
-  width: 70px;
-  height: 32px;
-  border: none;
-  border-radius: 6px;
-  background: #6586FE;
-  color: white;
-  font-family: "Nunito", sans-serif;
 }
 
 body {

@@ -1,0 +1,5 @@
+<h1>Account</h1>
+<h2><?= $_SESSION['username'] ?></h2>
+<p>Email: <?= $_SESSION['email'] ?></p>
+
+<a href="delete.php" onclick="return confirm('Are you sure you want to delete your account?');">delete account</a>

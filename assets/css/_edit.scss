@@ -1,58 +1,69 @@
 .editTaskContainer {
   width: 100%;
   min-height: 100vh;
-  padding: 20px 15px;
+  padding: $space-xl $space-md;
   text-align: center;
   font-family: $allFonts;
 
-    h1 {
-  margin: 15px 0 20px;
-  font-size: $h1Size;
+  h1 {
+    margin: $space-md 0 $space-xl;
+    font-size: $h1Size;
+  }
+
+  form {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+
+    > div {
+      margin-bottom: $space-lg;
     }
+  }
 
-    form {
-  width: 100%;
-  margin: 0 auto;
-  text-align: left;
-    }
-}
+  label {
+    display: block;
+    margin-bottom: $space-xs;
+    font-size: $pSize;
+    font-family: $allFonts;
+  }
 
-.editTaskContainer form > div {
-  margin-bottom: 16px;
-}
+  input[type="text"] {
+    width: 100%;
+    border: 1px solid $borderGray;
+    border-radius: $radius-md;
+    padding: $space-sm;
+    font-family: $pFont;
+  }
 
-.editTaskContainer label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: $pSize;
-  font-family: $allFonts;
-}
-
-.editTaskContainer input[type="text"] {
-  width: 100%;
-  border: 1px solid #cfcfcf;
-  border-radius: 8px;
-  padding: 10px;
-  font-family: $pFont;
-}
-
-.editTaskContainer input[name="taskContent"] {
-  height: 180px;
+  input[name="taskContent"] {
+    height: 180px;
+  }
 }
 
 .switchBlock {
   width: 220px;
-  margin-top: 10px;
-}
+  margin-top: $space-sm;
 
-.switch-item {
-  margin-bottom: 15px;
-}
+  .switch-item {
+    margin-bottom: $space-md;
 
-.switch-item p {
-  margin: 0 0 6px 0;
-  font-size: $pSize;
-  font-family: $allFonts;
+    p {
+      margin: 0 0 $space-xs;
+      font-size: $pSize;
+      font-family: $allFonts;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: $space-sm;
+    width: 70px;
+    height: 32px;
+    border: none;
+    border-radius: $radius-sm;
+    background: $blue;
+    color: $white;
+    font-family: $pFont;
+  }
 }
 
 .switch {
@@ -60,48 +71,34 @@
   width: 60px;
   height: 30px;
   display: inline-block;
-}
 
-.switch input {
-  display: none;
-}
+  input {
+    display: none;
+  }
 
-.slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ccc;
-  border-radius: 30px;
-}
+  .slider {
+    position: absolute;
+    inset: 0;
+    background: $gray;
+    border-radius: $radius-pill;
 
-.slider:before {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  background: white;
-  border-radius: 50%;
-  top: 4px;
-  left: 4px;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: $white;
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
+    }
+  }
 
-.switch input:checked + .slider {
-  background: $blue;
-}
+  input:checked + .slider {
+    background: $blue;
 
-.switch input:checked + .slider:before {
-  transform: translateX(30px);
-}
-
-.switchBlock button[type="submit"] {
-  margin-top: 10px;
-  width: 70px;
-  height: 32px;
-  border: none;
-  border-radius: 6px;
-  background: $blue;
-  color: white;
-  font-family: $allFonts;
+    &::before {
+      transform: translateX(30px);
+    }
+  }
 }

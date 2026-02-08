@@ -24,9 +24,9 @@
                         </div>
                     </ul>
                     <div class="buttons">
-                        <form method="post" action="validate_task.php">
+                        <form method="post">
                             <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
-                            <button class="validate"><i class="fa-solid fa-check"></i></button>
+                            <button type="submit" class="validate"><i class="fa-solid fa-check"></i></button>
                         </form>
                         
                         <a href="edit.php?id=<?= $task['id'] ?>">
@@ -35,9 +35,9 @@
                             </button>
                         </a>
                         
-                        <form method="post" action="delete_task.php">
+                        <form method="post">
                             <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
-                            <button class="delete">
+                            <button type="submit" class="delete">
                                 <i class="fa-regular fa-trash-can"></i>
                             </button>
                         </form>

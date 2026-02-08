@@ -1,0 +1,35 @@
+<section class="rankingContainer">
+    <h1>Ranking</h1>
+
+    <div class="rankingList">
+        <?php foreach ($ranking as $index => $user): ?>
+            <?php 
+                $rank = $index + 1; 
+                $rankClass = '';
+                
+                // Définition de la classe CSS selon le rang
+                if ($rank === 1) $rankClass = 'gold';
+                elseif ($rank === 2) $rankClass = 'silver';
+                elseif ($rank === 3) $rankClass = 'bronze';
+            ?>
+
+            <div class="rank-card <?= $rankClass ?>">
+                <div class="rank-icon">
+                    <?php if ($rank === 1): ?>
+                        <i class="fa-solid fa-medal"></i> <?php elseif ($rank === 2): ?>
+                        <i class="fa-solid fa-medal"></i>
+                    <?php elseif ($rank === 3): ?>
+                        <i class="fa-solid fa-medal"></i>
+                    <?php else: ?>
+                        <span class="rank-number">#<?= $rank ?></span>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="user-info">
+                    <span class="username"><?= htmlspecialchars($user['username']) ?></span>
+                    </div>
+            </div>
+
+        <?php endforeach; ?>
+    </div>
+</section>
