@@ -27,7 +27,7 @@ function insertUser(array $user, string $mot_de_passe_hache) : ?int {
 function getUserByUsername(string $username) : ?array {
     $db = connectToDB();
     try {
-        $query = $db->prepare('SELECT * FROM user WHERE username = :username');
+        $query = $db->prepare('SELECT * FROM users WHERE username = :username');
         $query->bindParam(':username', $username, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetch(PDO::FETCH_ASSOC);
