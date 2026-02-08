@@ -1,0 +1,107 @@
+.editTaskContainer {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 15px;
+  text-align: center;
+  font-family: $allFonts;
+
+    h1 {
+  margin: 15px 0 20px;
+  font-size: $h1Size;
+    }
+
+    form {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+    }
+}
+
+.editTaskContainer form > div {
+  margin-bottom: 16px;
+}
+
+.editTaskContainer label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: $pSize;
+  font-family: $allFonts;
+}
+
+.editTaskContainer input[type="text"] {
+  width: 100%;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: $pFont;
+}
+
+.editTaskContainer input[name="taskContent"] {
+  height: 180px;
+}
+
+.switchBlock {
+  width: 220px;
+  margin-top: 10px;
+}
+
+.switch-item {
+  margin-bottom: 15px;
+}
+
+.switch-item p {
+  margin: 0 0 6px 0;
+  font-size: $pSize;
+  font-family: $allFonts;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  border-radius: 30px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+.switch input:checked + .slider {
+  background: $blue;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.switchBlock button[type="submit"] {
+  margin-top: 10px;
+  width: 70px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: $blue;
+  color: white;
+  font-family: $allFonts;
+}

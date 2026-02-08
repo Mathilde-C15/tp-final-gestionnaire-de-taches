@@ -1,7 +1,7 @@
 <section class="editTaskContainer"> 
     <h1>Edit Task</h1>
 
-    <form action="update_task.php" method="post">
+    <form method="post">
         
         <div>
             <label for="taskTitle">Title</label>
@@ -12,15 +12,28 @@
             <input type="text" name="taskContent">
         </div>
 
-        <div>
-            <label for="urgent">Urgent</label>
-            <button type="checkbox">
-                
-            <label for="important">Important</label>
-            <button type="checkbox">
+    <div class="switchBlock">
 
-            <button type="submit">Save</button>
+            <div class="switch-item">
+            <p>Urgent</p>
+            <label class="switch">
+                <input type="checkbox" name="urgent" id="urgent">
+                <span class="slider"></span>
+            </label>
+            </div>
+
+        <div class="switch-item">
+        <p>Important</p>
+        <label class="switch">
+            <input type="checkbox" name="important" id="important">
+            <span class="slider"></span>
+        </label>
         </div>
+
+        <button type="submit">Save</button>
+
+        </div>
+
     </form>
 
 </section>
