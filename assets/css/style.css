@@ -6,10 +6,12 @@
 
 h1 {
   font-size: 24px;
+  font-family: "Nunito", sans-serif;
 }
 
 h2 {
   font-size: 18px;
+  font-family: "Nunito", sans-serif;
 }
 
 p {
@@ -98,7 +100,7 @@ p {
   gap: 1em;
   padding: 2em;
   border-radius: 8px;
-  width: 300px;
+  width: 100%;
 }
 .loginContainer h2 {
   font-size: 1px;
@@ -108,7 +110,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  width: 90%;
+  max-width: 100%;
 }
 .loginContainer .loginForm div {
   display: flex;
@@ -148,10 +150,53 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  align-items: center;
+}
+.accountContainer .taskContainer .buttonsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.accountContainer .taskContainer .buttonsContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.accountContainer .taskContainer .buttonsContainer ul div {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  gap: 0.5em;
+  width: 100%;
+}
+.accountContainer .taskContainer .buttonsContainer ul div input {
+  cursor: pointer;
+}
+.accountContainer .taskContainer .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accountContainer .taskContainer .buttons button {
+  margin: 0.5em;
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.accountContainer .taskContainer .buttons button:first-of-type {
+  background-color: #4CAF50;
+}
+.accountContainer .taskContainer .buttons button:nth-of-type(2) {
+  background-color: #008CBA;
+}
+.accountContainer .taskContainer .buttons button:nth-of-type(3) {
+  background-color: #f44336;
 }
 
 body {
   height: 100;
+  width: 100%;
 }
 
 .layoutContainer {
