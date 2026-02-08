@@ -1,7 +1,7 @@
 <section class="loginContainer">
     <h1>Login</h1>
 
-    <form method="post" action="login" class="loginForm">
+    <form method="post" class="loginForm">
         <div>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -14,4 +14,7 @@
 
         <button type="submit">Login</button>
     </form>
+    <?php if (!empty($error)): ?>
+        <p class="error"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
 </section>
