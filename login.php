@@ -4,12 +4,12 @@ session_start();
 
 include('repositories/userRepository.php');
 
+$_SESSION['id_user'] = (int) $user['id'];
 // Vérifie si l'utilisateur est déjà connecté, si oui, l'envoie vers la page 'account'
-if (isset($_SESSION['loggedIn'])) {
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
     header("Location: userTasks.php");
     exit();
 }
-
 // Si on a bien une requête POST, on récupère les données identifiant et password.
 if (!empty($_POST)) {
     $username = $_POST['username'];
@@ -21,6 +21,7 @@ if (!empty($_POST)) {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['loggedIn'] = true;
         $_SESSION['user'] = $user;
+        $_SESSION['id_user'] = (int) $user['id'];
         header("Location: userTasks.php");
         exit();
     } else {

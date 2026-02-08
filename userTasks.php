@@ -9,10 +9,28 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) {
     exit();
 }
 
-$userId = (int) $_SESSION['user_id'];
+if (!isset($_SESSION['id_user'])) {
+    header("Location: login.php");
+    exit();
+}
 
-$tasks = getTasksByUserId($userId);
-$tasks = $tasks ?? [];
+$userId = (int) $_SESSION['id_user'];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = trim($_POST['title'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $urgent = isset($_POST['urgent']);
+    $important = isset($_POST['important']);
+
+    if ($title !== '' && $content !== '') {
+        addTaskForUser($userId, $title, $content, $urgent, $important);
+        header("Location: userTasks.php"); // évite le double submit
+        exit();
+    }
+}
+
+$tasks = getTasksByUserId($userId) ?? [];
+
 
 
 
