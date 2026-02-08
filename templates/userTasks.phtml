@@ -1,0 +1,86 @@
+<section class="accountContainer">
+    <h1>Account</h1>
+   
+    <h2>Your tasks</h2>
+   
+    <?php if (empty($tasks)) : ?>
+        <p>No task yet.</p>
+    <?php else : ?>
+ 
+        <?php foreach ($tasks as $task) : ?>
+            <article class="taskContainer">
+                <h3 class="title"><?= htmlspecialchars($task['title']) ?></h3>
+                <p class="content"><?= htmlspecialchars($task['content']) ?></p>
+ 
+                <div class="buttonsContainer">
+                    <ul>
+                        <div>
+                            <label>Urgent</label>
+                            <input type="checkbox" disabled <?= $task['urgent'] ? 'checked' : '' ?>>
+                        </div>
+                        <div>
+                            <label>Important</label>
+                            <input type="checkbox" disabled <?= $task['important'] ? 'checked' : '' ?>>
+                        </div>
+                    </ul>
+                    <div class="buttons">
+                        <form method="post" action="validate_task.php">
+                            <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
+                            <button class="validate"><i class="fa-solid fa-check"></i></button>
+                        </form>
+                       
+                        <a href="edit.php?id=<?= $task['id'] ?>">
+                            <button class="modify">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                        </a>
+                       
+                        <form method="post" action="delete_task.php">
+                            <input type="hidden" name="task_id" value="<?= $task['id'] ?>">
+                            <button class="delete">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        <?php endforeach; ?>
+    <?php endif; ?>
+ 
+    <article class="newTaskContainer">
+        <h3>New Task</h3>
+        <form method="post">
+            <div class="field-group">
+                <div>
+                    <label for="title">Title</label>
+                </div>
+                <input type="text" name="title" id="title" required>
+            </div>
+ 
+            <div class="field-group">
+                <div>
+                    <label for="content">Content</label>
+                </div>
+                <textarea name="content" id="content" rows="6" required></textarea>
+            </div>
+ 
+            <div class="switch-item">
+                <label>Urgent</label>
+                <label class="switch">
+                    <input type="checkbox" name="urgent" id="urgent">
+                    <span class="slider"></span>
+                </label>
+            </div>
+ 
+            <div class="switch-item">
+                <label>Important</label>
+                <label class="switch">
+                    <input type="checkbox" name="important" id="important">
+                    <span class="slider"></span>
+                </label>
+            </div>
+ 
+            <button type="submit">Add</button>
+        </form>
+    </article>
+</section>
