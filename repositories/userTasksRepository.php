@@ -2,17 +2,19 @@
 
 require __DIR__ . '/../config/db.php';
 
-function getTasksByUserId(int $taskId, int $userId) : ?array {
+function getTasksByUserId(int $userId): ?array
+{
     $db = connectToDB();
+
     try {
-        $query = $db->prepare('SELECT * FROM tasks WHERE id = :task_id AND user_id = :user_id');
-        $query->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $query = $db->prepare('SELECT * FROM task WHERE id_user = :id_user ORDER BY id DESC');
+        $query->bindParam(':id_user', $userId, PDO::PARAM_INT);
         $query->execute();
+
         $tasks = $query->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($tasks);
+
         return $tasks ?: null;
-    } catch (Exception $e) {
-        //die($e->getMessage());
+    } catch (PDOException $e) {
         return null;
     }
 }
