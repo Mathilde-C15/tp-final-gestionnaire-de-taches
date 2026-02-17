@@ -9,7 +9,7 @@ if(!empty($_POST)){
     $db = connectToDB();
     
     $email = $_POST['email'];
-    $username = $_POST['username'];
+    $username = $_POST['user_name'];
     $password = $_POST['password'];
     $errors = array();
     
@@ -28,10 +28,10 @@ if(!empty($_POST)){
         // password_hash() permet de crypter le mot de passe.
         $mot_de_passe_hache = password_hash($password, PASSWORD_DEFAULT);
         
-        $requete = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+        $requete = $db->prepare("INSERT INTO users (user_name, password) VALUES (:user_name, :password)");
         
         //bindParam() associe la valeur de la variable $username au paramètre :username dans la requête préparée, en spécifiant que $username est une chaîne de caractères (:PARAM_STR). C'est une sécurité contre les injections SQL.
-        $requete->bindParam(':username', $username, PDO::PARAM_STR);
+        $requete->bindParam(':user_name', $username, PDO::PARAM_STR);
         $requete->bindParam(':password', $mot_de_passe_hache, PDO::PARAM_STR);
         
         $requete->execute();
